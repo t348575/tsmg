@@ -7,6 +7,13 @@
         "@t348575/tsmg": "bin/tsmg",
         "tsmg": "bin/tsmg"
     },
+    "files": [
+        "bin/",
+        "src/",
+        "dist/",
+        "README.md",
+        "example-config.json"
+    ],
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
@@ -15,16 +22,23 @@
     },
     "keywords": [
         "cli",
-        "tsmg"
+        "tsmg",
+        "typescript",
+        "model",
+        "generator"
     ],
     "author": "Joseph Subash Kanichai <kjosephsubash@gmail.com> (https://github.com/t348575)",
     "license": "MIT",
     "dependencies": {
         "arg": "^5.0.0",
+        "chalk": "^4.1.0",
         "esm": "^3.2.25",
         "inquirer": "^7.3.3"
     },
     "devDependencies": {
-        "@types/inquirer": "^7.3.1"
+        "@types/chalk": "^2.2.0",
+        "@types/inquirer": "^7.3.1",
+        "@types/mysql": "^2.15.17",
+        "mysql": "^2.18.1"
     }
 }

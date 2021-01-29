@@ -1,0 +1,46 @@
+{
+    "driver": "mysql",
+    "driverOptions": {
+        "host": "some_host_or_ip",
+        "port": 3306,
+        "user": "some_user",
+        "password": "some_password"
+    },
+    "dir": "C:/Users/some_user/some_path",
+    "defaultDb": "some_database",
+    "entireDatabase": true,
+    "defaultType": "interface",
+    "defaultSuffix": "model",
+    "defaultConnector": "-",
+    "defaultFile": "types",
+    "tabSize": 4,
+    "case": "camel",
+    "renameClassToCase": true,
+    "renameObjectToCase": false,
+    "setNullAsOptional": true,
+    "dateTimeAsDate": false,
+    "dateAsDate": false,
+    "reWrite": true,
+    "modelViews": true,
+    "classOptions": {
+        "constructor": false,
+        "sqlCRUD": false
+    },
+    "tables": [
+        "some_table_1",
+        {
+            "type": "interface",
+            "suffix": "model",
+            "name": "some_table_2"
+        },
+        {
+            "type": "class",
+            "suffix": "someOtherSuffix",
+            "database": "some_other_db",
+            "name": "some_table_3",
+            "omit": ["id", "/.*type.*/g"],
+            "constructor": true,
+            "sqlCRUD": false
+        }
+    ]
+}
