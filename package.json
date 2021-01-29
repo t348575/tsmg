@@ -1,6 +1,6 @@
 {
     "name": "tsmg",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A simple cli to generate typescript interfaces, types or classes based on database tables",
     "main": "dist/cli.js",
     "bin": {
