@@ -9,11 +9,10 @@ export class Config {
 	defaultDb: string | undefined;
 	entireDatabase = false;
 	singleFile = false;
-	defaultFile = 'types.ts';
 	defaultSuffix = 'model';
 	defaultConnector = '-';
 	renameTableToCase = true;
-	renameObjectToCase = false;
+	renameAttributeToCase = false;
 	setNullAsOptional = false;
 	dateTimeAsDate = true;
 	dateAsDate = true;
@@ -37,7 +36,7 @@ export class Config {
 			name: 'renameTableToCase'
 		},
 		{
-			name: 'renameObjectToCase'
+			name: 'renameAttributeToCase'
 		},
 		{
 			name: 'setNullAsOptional'
@@ -57,9 +56,6 @@ export class Config {
 		},
 		{
 			name: 'modelViews'
-		},
-		{
-			name: 'defaultFile'
 		},
 		{
 			name: 'defaultConnector'
@@ -176,7 +172,7 @@ export function setDefaultTableOptions(obj: any, config: Config): Table {
 		database: config.defaultDb,
 		suffix: config.defaultSuffix,
 		connector: config.defaultConnector,
-		file: config.defaultFile,
+		file: (!checkGiven(obj, 'file') ? obj.file : obj.name),
 		omit: [],
 		constructor: false,
 		sqlCRUD: false,

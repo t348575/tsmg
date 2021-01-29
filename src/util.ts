@@ -103,9 +103,9 @@ export function tab(size: number) {
 		return '';
 }
 
-export function getField(field: string, type: string, nullOptional = false) {
+export function getField(field: string, type: string, nullOptional: boolean, renameAttribute: boolean, stringCase: 'camel' | 'pascal' | 'snake') {
 	if (type.indexOf('int') > -1 || type.indexOf('float') > -1 || type.indexOf('decimal') > -1 || type.indexOf('numeric') > -1) {
-		return `${field}${nullOptional ? '?:' : ':'} number;`;
+		return `${renameAttribute ? convertCase(stringCase, field) : field}${nullOptional ? '?:' : ':'} number;`;
 	}
 	if (
 		type.indexOf('date') > -1 ||
@@ -115,7 +115,7 @@ export function getField(field: string, type: string, nullOptional = false) {
 		type.indexOf('blob') > -1 ||
 		type.indexOf('enum') > -1
 	) {
-		return `${field}${nullOptional ? '?:' : ':'} string;`;
+		return `${renameAttribute ? convertCase(stringCase, field) : field}${nullOptional ? '?:' : ':'} string;`;
 	}
 }
 

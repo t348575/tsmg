@@ -184,7 +184,7 @@ function writeFile(config: Config, table: Table, prev: string[]): string {
 			}
 		}
 		if (!skip) {
-			data += `\n${tabSize}${getField(v.Field, v.Type, config.setNullAsOptional)}`
+			data += `\n${tabSize}${getField(v.Field, v.Type, config.setNullAsOptional, config.renameAttributeToCase, config.case)}`
 		}
 	}
 	if (table.type === 'class' && (table.constructor || table.sqlCRUD)) {
