@@ -131,13 +131,15 @@ export class Config {
 		for (const v of this.optionsList) {
 			checkAndInsert(v.name, opt, this, v.filter);
 		}
-		for (const [idx, v] of opt.tables.entries()) {
-			if (typeof v === 'string') {
-				opt.tables[idx] = stringToTable(v, this);
+		if (!checkGiven(opt, 'tables', 'object') && opt.tables instanceof Array) {
+			for (const [idx, v] of opt.tables.entries()) {
+				if (typeof v === 'string') {
+					opt.tables[idx] = stringToTable(v, this);
+				}
+				opt.tables[idx] = setDefaultTableOptions(opt.tables[idx], this);
 			}
-			opt.tables[idx] = setDefaultTableOptions(opt.tables[idx], this);
+			this.tables = opt.tables as Table[];
 		}
-		this.tables = opt.tables as Table[];
 	}
 }
 

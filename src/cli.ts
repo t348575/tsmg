@@ -109,6 +109,7 @@ export async function cli(args: string[]) {
 						config.connection.end();
 					}
 					catch(e) {
+						console.log(e);
 						throwError('Unknown error occurred');
 					}
 				});
@@ -116,6 +117,7 @@ export async function cli(args: string[]) {
 			}
 		}
 	} catch (e) {
+		console.log(e);
 		throwError('Unknown error occurred');
 	}
 }
