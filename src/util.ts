@@ -104,7 +104,7 @@ export function tab(size: number) {
 }
 
 export function getField(field: string, type: string, nullOptional: boolean, renameAttribute: boolean, stringCase: 'camel' | 'pascal' | 'snake') {
-	if (type.indexOf('int') > -1 || type.indexOf('float') > -1 || type.indexOf('decimal') > -1 || type.indexOf('numeric') > -1) {
+	if (type.indexOf('int') > -1 || type.indexOf('float') > -1 || type.indexOf('double') > -1 || type.indexOf('decimal') > -1 || type.indexOf('numeric') > -1) {
 		return `${renameAttribute ? convertCase(stringCase, field) : field}${nullOptional ? '?:' : ':'} number;`;
 	}
 	if (
