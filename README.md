@@ -1,4 +1,5 @@
-# tsmg (Typescript model generator)
+# tsmg (Typescript model generator) ![Visits](https://nkvnu62257.execute-api.ap-south-1.amazonaws.com/production?repo=tsmg)
+
 A simple cli to generate typescript interfaces, types or classes based on database tables. Currently only supports mysql.
 
 ### Install
